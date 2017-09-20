@@ -1,0 +1,22 @@
+
+<ion-header>
+  <ion-navbar>
+    <ion-title>
+      Complete
+    </ion-title>
+  </ion-navbar>
+</ion-header>
+<ion-content padding>
+  <form #loginForm="ngForm" (ngSubmit)="login()" autocomplete="off">
+    <ion-row>
+      <ion-col>
+        <ion-list inset>
+          <ion-item>
+            <ion-input placeholder="Complete" name="username" id="loginUsername" type="text" required [(ngModel)]="username" ></ion-input>
+          </ion-item>
+		  
+        </ion-list>
+      </ion-col>
+    </ion-row>
+  </form>
+</ion-content>
