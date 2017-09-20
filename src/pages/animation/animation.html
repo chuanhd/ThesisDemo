@@ -1,0 +1,12 @@
+<ion-header>
+  <ion-navbar>
+    <ion-title>
+      Animation
+    </ion-title>
+  </ion-navbar>
+</ion-header>
+<ion-content padding>
+  <div animates #animation="animates" text-center>
+    <button ion-button (click)="animation.start({type: 'wobble', duration: '1000'})">Click me!</button>
+  </div>
+</ion-content>

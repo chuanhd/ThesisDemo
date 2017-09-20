@@ -1,6 +1,7 @@
 import { Component } from '@angular/core';
 import { NavController } from 'ionic-angular';
 import { UIUIDemoPage } from '../ui_and_ux/uiux'
+import { AnimationPage } from '../animation/animation'
 
 @Component({
   selector: 'page-home',
@@ -24,10 +25,10 @@ export class HomePage {
 
     if (item  == this.items[0]) {
       this.navCtrl.push(UIUIDemoPage);
-    } else if (item == this.items[1]) {
-
+    } else if (item == this.items[2]) {
+      this.navCtrl.push(AnimationPage);
     }
-    
+
   }
 
   constructor(public navCtrl: NavController) {
