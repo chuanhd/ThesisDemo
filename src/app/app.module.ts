@@ -5,12 +5,15 @@ import { SplashScreen } from '@ionic-native/splash-screen';
 import { StatusBar } from '@ionic-native/status-bar';
 import { NativePageTransitions } from '@ionic-native/native-page-transitions'
 import { AnimationService, AnimatesDirective } from 'css-animator';
+import { GoogleMaps } from '@ionic-native/google-maps';
 
 import { MyApp } from './app.component';
 import { HomePage } from '../pages/home/home';
 import { UIUIDemoPage } from '../pages/ui_and_ux/uiux'
 import { UIUISignUpPage } from '../pages/sign_up/signup'
 import { AnimationPage } from '../pages/animation/animation'
+import { LayoutPage } from '../pages/layout/layout'
+import { MapsPage } from '../pages/maps/maps'
 
 @NgModule({
   declarations: [
@@ -19,6 +22,8 @@ import { AnimationPage } from '../pages/animation/animation'
     UIUIDemoPage,
   	UIUISignUpPage,
     AnimationPage,
+	  LayoutPage,
+    MapsPage,
     AnimatesDirective
   ],
   imports: [
@@ -31,14 +36,17 @@ import { AnimationPage } from '../pages/animation/animation'
     HomePage,
     UIUIDemoPage,
 	  UIUISignUpPage,
-    AnimationPage
+    AnimationPage,
+	  LayoutPage,
+    MapsPage
   ],
   providers: [
     StatusBar,
     SplashScreen,
 	  NativePageTransitions,
     {provide: ErrorHandler, useClass: IonicErrorHandler},
-    AnimationService
+    AnimationService,
+    GoogleMaps
   ]
 })
 export class AppModule {}
