@@ -4,6 +4,7 @@ import { UIUIDemoPage } from '../ui_and_ux/uiux'
 import { AnimationPage } from '../animation/animation'
 import { LayoutPage } from '../layout/layout'
 import { MapsPage } from '../maps/maps'
+import { ServicesPage } from '../services/services'
 
 @Component({
   selector: 'page-home',
@@ -33,6 +34,8 @@ export class HomePage {
 		this.navCtrl.push(LayoutPage)
 	  } else if (item == this.items[4]){
       this.navCtrl.push(MapsPage)
+    } else if (item == this.items[3]){
+      this.navCtrl.push(ServicesPage)
     }
 
   }

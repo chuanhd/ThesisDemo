@@ -6,6 +6,7 @@ import { StatusBar } from '@ionic-native/status-bar';
 import { NativePageTransitions } from '@ionic-native/native-page-transitions'
 import { AnimationService, AnimatesDirective } from 'css-animator';
 import { GoogleMaps } from '@ionic-native/google-maps';
+import { HttpModule } from '@angular/http';
 
 import { MyApp } from './app.component';
 import { HomePage } from '../pages/home/home';
@@ -14,6 +15,8 @@ import { UIUISignUpPage } from '../pages/sign_up/signup'
 import { AnimationPage } from '../pages/animation/animation'
 import { LayoutPage } from '../pages/layout/layout'
 import { MapsPage } from '../pages/maps/maps'
+import { ServicesPage } from '../pages/services/services'
+import { ApiProvider } from '../providers/api/api';
 
 @NgModule({
   declarations: [
@@ -24,10 +27,12 @@ import { MapsPage } from '../pages/maps/maps'
     AnimationPage,
 	  LayoutPage,
     MapsPage,
+    ServicesPage,
     AnimatesDirective
   ],
   imports: [
     BrowserModule,
+    HttpModule,
     IonicModule.forRoot(MyApp)
   ],
   bootstrap: [IonicApp],
@@ -38,7 +43,8 @@ import { MapsPage } from '../pages/maps/maps'
 	  UIUISignUpPage,
     AnimationPage,
 	  LayoutPage,
-    MapsPage
+    MapsPage,
+    ServicesPage
   ],
   providers: [
     StatusBar,
@@ -46,7 +52,8 @@ import { MapsPage } from '../pages/maps/maps'
 	  NativePageTransitions,
     {provide: ErrorHandler, useClass: IonicErrorHandler},
     AnimationService,
-    GoogleMaps
+    GoogleMaps,
+    ApiProvider
   ]
 })
 export class AppModule {}
