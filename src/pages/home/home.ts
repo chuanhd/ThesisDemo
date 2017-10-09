@@ -5,6 +5,7 @@ import { AnimationPage } from '../animation/animation'
 import { LayoutPage } from '../layout/layout'
 import { MapsPage } from '../maps/maps'
 import { ServicesPage } from '../services/services'
+import { MultithreadPage } from '../multithread/multithread'
 
 @Component({
   selector: 'page-home',
@@ -36,6 +37,8 @@ export class HomePage {
       this.navCtrl.push(MapsPage)
     } else if (item == this.items[3]){
       this.navCtrl.push(ServicesPage)
+    } else if (item == this.items[6]){
+      this.navCtrl.push(MultithreadPage)
     }
 
   }

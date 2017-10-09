@@ -1,21 +1,29 @@
 import { Component } from '@angular/core';
-import { NavController, NavParams } from 'ionic-angular';
+import { NavController, NavParams, LoadingController } from 'ionic-angular';
 import { ApiProvider } from './../../providers/api/api';
 import { Observable } from 'rxjs/Observable';
+import { ImgLoader } from 'ionic-image-loader';
 
 @Component({
-  selector: 'page-services-demo',
-  templateUrl: 'services.html'
+  selector: 'page-multithread-demo',
+  templateUrl: 'multithread.html'
 })
-export class ServicesPage {
-  photolist: Observable<any>;
-  constructor(public navCtrl: NavController, public apiProvider: ApiProvider) { 
+export class MultithreadPage {
+  images: string[] = [
+    'assets/img/AMG_7675.JPG',
     
+  ];
+  constructor(public loadingCtrl: LoadingController) {
   }
-  ionGet(){
-    this.apiProvider.getPhotos().subscribe(data => {
-      this.photolist = data;
-      console.log(data);
-   });
+
+  presentLoadingDefault() {
+    const loading = this.loadingCtrl.create({
+      content: 'Please wait...'
+    });
+    
+    loading.present();
+    setTimeout(() => {
+      loading.dismiss();
+    }, 5000);
   }
 }

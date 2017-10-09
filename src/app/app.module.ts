@@ -7,6 +7,7 @@ import { NativePageTransitions } from '@ionic-native/native-page-transitions'
 import { AnimationService, AnimatesDirective } from 'css-animator';
 import { GoogleMaps } from '@ionic-native/google-maps';
 import { HttpModule } from '@angular/http';
+import { IonicImageLoader } from 'ionic-image-loader';
 
 import { MyApp } from './app.component';
 import { HomePage } from '../pages/home/home';
@@ -17,6 +18,7 @@ import { LayoutPage } from '../pages/layout/layout'
 import { MapsPage } from '../pages/maps/maps'
 import { ServicesPage } from '../pages/services/services'
 import { ApiProvider } from '../providers/api/api';
+import { MultithreadPage } from '../pages/multithread/multithread'
 
 @NgModule({
   declarations: [
@@ -28,12 +30,14 @@ import { ApiProvider } from '../providers/api/api';
 	  LayoutPage,
     MapsPage,
     ServicesPage,
-    AnimatesDirective
+    AnimatesDirective,
+    MultithreadPage
   ],
   imports: [
     BrowserModule,
     HttpModule,
-    IonicModule.forRoot(MyApp)
+    IonicModule.forRoot(MyApp),
+    IonicImageLoader.forRoot()
   ],
   bootstrap: [IonicApp],
   entryComponents: [
@@ -44,7 +48,8 @@ import { ApiProvider } from '../providers/api/api';
     AnimationPage,
 	  LayoutPage,
     MapsPage,
-    ServicesPage
+    ServicesPage,
+    MultithreadPage
   ],
   providers: [
     StatusBar,

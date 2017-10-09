@@ -1,19 +1,14 @@
 <ion-header>
-  <ion-navbar>
-    <ion-title>
-      Services Page
-    </ion-title>
-  </ion-navbar>
-</ion-header>
-<ion-content padding>
-      <button ion-button (click)="ionGet()">Get</button>
-
-<ion-card >
-  <ion-card-header>
-    Json
-  </ion-card-header>
-  <ion-card-content>
-      <p >{{photolist | json}}</p>
-  </ion-card-content>
-</ion-card>
-</ion-content>
+    
+      <ion-navbar>
+        <ion-title>Multithread</ion-title>
+      </ion-navbar>
+    
+    </ion-header>
+    
+    
+    <ion-content>
+        <ion-card *ngFor="let image of images" >
+          <img-loader [src]="image" [useImg]="true" (load)=presentLoadingDefault()></img-loader>
+        </ion-card>
+      </ion-content>
