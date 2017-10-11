@@ -19,7 +19,6 @@ export class HomePage {
     'Animation',
     'Web Services',
     'Third party and services',
-    'Game',
     'Multithreading and background thread',
     'Testing'
   ];
@@ -37,7 +36,7 @@ export class HomePage {
       this.navCtrl.push(MapsPage)
     } else if (item == this.items[3]){
       this.navCtrl.push(ServicesPage)
-    } else if (item == this.items[6]){
+    } else if (item == this.items[5]){
       this.navCtrl.push(MultithreadPage)
     }
 

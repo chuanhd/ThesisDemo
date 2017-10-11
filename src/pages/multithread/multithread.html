@@ -9,6 +9,6 @@
     
     <ion-content>
         <ion-card *ngFor="let image of images" >
-          <img-loader [src]="image" [useImg]="true" (load)=presentLoadingDefault()></img-loader>
+          <img-loader [src]="image" [useImg]="true" [spinner]="true" ></img-loader>
         </ion-card>
       </ion-content>
