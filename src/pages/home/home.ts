@@ -20,7 +20,6 @@ export class HomePage {
     'Web Services',
     'Third party and services',
     'Multithreading and background thread',
-    'Testing'
   ];
 
   itemSelected(item: string) {

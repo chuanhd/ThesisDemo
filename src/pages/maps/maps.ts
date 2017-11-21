@@ -1,6 +1,6 @@
 import { Component, ElementRef, ViewChild } from '@angular/core';
 import { NavController } from 'ionic-angular';
-import { GoogleMaps, GoogleMap, CameraPosition, LatLng, GoogleMapsEvent } from '@ionic-native/google-maps';
+import { GoogleMaps, GoogleMap, CameraPosition, GoogleMapOptions, LatLng, GoogleMapsEvent } from '@ionic-native/google-maps';
 
 @Component({
   selector: 'page-maps-demo',
@@ -19,9 +19,20 @@ ngAfterViewInit(){
 
 initMap(){
   let element = this.mapElement.nativeElement;
-  let loc: LatLng = new LatLng(40.7128, -74.0059);
+  // let loc: LatLng = new LatLng(21.0398407, 105.784294);
 
-  this.map = this._googleMaps.create(element,{ styles: []});
+  let mapOptions: GoogleMapOptions = {
+    camera: {
+      target: {
+        lat: 21.0398407,
+        lng: 105.784294
+      },
+      zoom: 13,
+      tilt: 60
+    }
+  };
+
+  this.map = this._googleMaps.create(element, mapOptions);
 }
 
 }
